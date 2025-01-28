@@ -1,14 +1,17 @@
-# list fo all cards of single deck
 import random 
 
+# list of all 52 cards  
 deck = []
+# list that stores 13 random cards 
 random_set = []
 
 
+# list fo all cards and push to deck  
 for i in range(4):
     for j in range(1, 14):
-        deck.append([f"{i}", f"{j}"])
+        deck.append([i, j])
 
+# print deck
 # print(deck, '\n')
 
 for i in range(13):
@@ -17,36 +20,5 @@ for i in range(13):
     random_set.append(deck[random_index])
     deck.remove(deck[random_index])
 
-# printing random distributed set 
-for i in random_set: 
-    print(i)
+print(random_set)
 
-print('\n')
-zero  = []
-one   = []
-two   = []
-three = []
-
-for i in random_set:
-    # print(i[0])
-    if (i[0] == '0'):
-        zero.append(i)
-    elif (i[0] == '1'):
-        one.append(i)
-    elif (i[0] == '2'):
-        two.append(i)
-    else :
-        three.append(i)
-
-print(zero)
-print(one)
-print(two)
-print(three)
-
-print('\nSET SIZE :', len(one) + len(two) + len(three) + len(zero))
-
-same = []
-for i in random_set:
-    for n in range(13):
-            for x in range(4):
-                
