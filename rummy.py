@@ -24,17 +24,19 @@ for i in range(13):
 
 print(random_set, '\n\n')
 
-# fuction returns similar number but not the symbols
-def find_same_number(s):
+# fuction returns similar number and symbols are different
+def find_same_num(s):
     return_list = []
     for card in s:
         t = []
         for x in s:
-            if (card[1] == x[1]):
+            if (card[1] == x[1] and card[0] != x[0]):
                 t.append(card)
                 t.append(x)
-        return_list.append(t)
+        if len(t) != 0:
+            return_list.append(t)
+
     return return_list
 
-for i in find_same_number(random_set):
+for i in find_same_num(random_set):
     print(i)
